@@ -6,7 +6,7 @@ function Name() {
             <div className="fade flex flex-col items-start justify-start">
                 <h1
                     className="pb-4 text-white leading-tight text-[clamp(2rem,4vw,4.5rem)]"
-                    style={{ fontFamily: 'Baskerville, serif' }}
+                    style={{ fontFamily: 'Libertinus Math, serif' }}
                 >
                     shajeenth shanmugarajah
                 </h1>
