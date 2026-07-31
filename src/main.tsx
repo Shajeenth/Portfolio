@@ -10,7 +10,7 @@ createRoot(document.getElementById('root')!).render(
     <div className="min-h-screen bg-[#05070b] lg:flex">
       <Name />
       <div
-        className="flex-1"
+        className="flex-1 lg:ml-[28rem]"
         style={{
           backgroundColor: '#0a0f16',
           backgroundImage:
