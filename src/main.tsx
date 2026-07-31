@@ -7,8 +7,12 @@ import Gap from './components/Gap.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <Name />
-    <ProjectScroll />
-    <Gap />
+    <div className="min-h-screen bg-[#05070b] lg:flex">
+      <Name />
+      <div className="flex-1">
+        <ProjectScroll />
+        <Gap />
+      </div>
+    </div>
   </StrictMode>,
 )
