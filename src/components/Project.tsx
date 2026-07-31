@@ -9,7 +9,7 @@ interface Details{
 
 function Project(details:Details) {
     return (
-        <div className="card bg-base-200 w-96 shadow-sm duration-300 ease-out">
+        <div className="card bg-base-200 w-96 shadow-sm">
             <figure>
                 <img
                 src={details.image}
