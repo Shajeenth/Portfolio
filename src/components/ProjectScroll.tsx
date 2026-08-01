@@ -5,19 +5,17 @@ function ProjectScroll() {
     return (
         <section className="py-8">
             <div className="container mx-auto px-4">
-                <div className="mt-0 flex items-center gap-3">
-                    <h1 className="text-6xl heading mb-8 mt-0 text-[#fdf8c2]" style={{ fontFamily: 'Libertinus Math, serif' }}>projects</h1>
-                    <div
-                        className="mb-8 mt-1"
-                        style={{
-                            width: 0,
-                            height: 0,
-                            borderTop: '0.7rem solid transparent',
-                            borderBottom: '0.7rem solid transparent',
-                            borderRight: '1.15rem solid #fdf8c2',
-                        }}
-                        aria-hidden="true"
-                    />
+                <div className="group mt-0 mb-8 flex w-full flex-wrap items-center justify-between gap-3 px-4 py-3">
+                    <h1
+                        className="text-6xl heading text-[#fdf8c2] transition-all duration-300"
+                        style={{ fontFamily: 'Libertinus Math, serif' }}
+                    >
+                        projects
+                    </h1>
+                    <div className="flex items-center gap-4 text-sm text-[#fdf8c2]" style={{ fontFamily: 'Libertinus Math, serif' }}>
+                        <span className="transition-colors duration-300 hover:text-[#fdf8c2]">experience</span>
+                        <span className="transition-colors duration-300 hover:text-[#fdf8c2]">resume</span>
+                    </div>
                 </div>
                 <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
                     <div className="flex justify-center md:justify-start">
