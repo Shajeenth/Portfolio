@@ -9,7 +9,7 @@ interface Details{
 
 function Project(details:Details) {
     return (
-        <div className="card project-card w-96 overflow-hidden shadow-sm">
+        <div className="card project-card overflow-hidden shadow-sm">
             <figure>
                 <img
                 src={details.image}
