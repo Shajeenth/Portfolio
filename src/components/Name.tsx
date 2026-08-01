@@ -17,6 +17,12 @@ function Name() {
                     <span className="text-gray-300">mechatronics engineering @ </span>
                     <span className="font-semibold text-white">UWaterloo</span>
                 </p>
+                
+                <br></br>
+
+                <p className="tinytext text-white">
+                    <span className="font-semibold text-white" >about me:</span>
+                </p>
             </div>
         </aside>
     )

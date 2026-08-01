@@ -19,7 +19,6 @@ createRoot(document.getElementById('root')!).render(
         }}
       >
         <ProjectScroll />
-        <Gap />
       </div>
     </div>
   </StrictMode>,
