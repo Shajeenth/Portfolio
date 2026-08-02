@@ -1,20 +1,36 @@
 import './styles.css'
 import Project from './Project.tsx'
+import { useState } from 'react'
 
 function ProjectScroll() {
+    const [activeTab, setActiveTab] = useState<'projects' | 'experience' | 'resume'>('projects')
+
     return (
         <section className="py-8">
             <div className="container mx-auto px-4">
                 <div className="group mt-0 mb-8 flex w-full flex-wrap items-center justify-between gap-3 px-4 py-3">
-                    <h1
-                        className="text-6xl heading text-[#fdf8c2] transition-all duration-300"
-                        style={{ fontFamily: 'Libertinus Math, serif' }}
-                    >
-                        projects
-                    </h1>
-                    <div className="flex items-center gap-4 text-sm text-[#fdf8c2]" style={{ fontFamily: 'Libertinus Math, serif' }}>
-                        <span className="transition-colors duration-300 hover:text-[#fdf8c2]">experience</span>
-                        <span className="transition-colors duration-300 hover:text-[#fdf8c2]">resume</span>
+                    <div className="flex items-center gap-16" style={{ fontFamily: 'Libertinus Math, serif' }}>
+                        <span
+                            className={`cursor-pointer text-2xl font-medium transition-all duration-300 ${activeTab === 'projects' ? 'text-6xl font-bold text-[#fdf8c2]' : 'text-[#fdf8c283]'}`}
+                            onMouseEnter={() => setActiveTab('projects')}
+                            onMouseLeave={() => setActiveTab('projects')}
+                        >
+                            projects
+                        </span>
+                        <span
+                            className={`cursor-pointer text-2xl font-medium transition-all duration-300 ${activeTab === 'experience' ? 'text-6xl font-bold text-[#fdf8c2]' : 'text-[#fdf8c283]'}`}
+                            onMouseEnter={() => setActiveTab('experience')}
+                            onMouseLeave={() => setActiveTab('projects')}
+                        >
+                            experience
+                        </span>
+                        <span
+                            className={`cursor-pointer text-2xl font-medium transition-all duration-300 ${activeTab === 'resume' ? 'text-6xl font-bold text-[#fdf8c2]' : 'text-[#fdf8c283]'}`}
+                            onMouseEnter={() => setActiveTab('resume')}
+                            onMouseLeave={() => setActiveTab('projects')}
+                        >
+                            resume
+                        </span>
                     </div>
                 </div>
                 <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
