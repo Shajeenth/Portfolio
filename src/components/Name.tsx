@@ -3,7 +3,7 @@ import './styles.css'
 function Name() {
     return (
         <aside className="w-full bg-[#05070b] px-6 py-6 sm:px-8 lg:fixed lg:top-0 lg:left-0 lg:h-screen lg:w-[28rem] lg:px-10">
-            <div className="fade flex flex-col items-start justify-start">
+            <div className="fade flex h-full flex-col items-start justify-start">
                 <h1
                     className="pb-4 max-w-full text-white leading-tight text-[clamp(2rem,3.2vw,3.25rem)]"
                     style={{ fontFamily: 'Libertinus Math, serif' }}
@@ -34,6 +34,46 @@ function Name() {
                         </li>
                     </ul>
                 </p>
+                <br></br>
+
+                <p className="text-sm tinytext text-white mb-4">
+                    <span className="font-light text-gray-300">about me</span>
+                    <ul className="list-disc pl-5">
+                        <li className="tinytext text-gray-300 my-1">
+                            i love Bleach (the manga)
+                        </li>
+                        <li className="tinytext text-gray-300 my-1">
+                            Nujabes is my favorite music producer
+                        </li>
+                    </ul>
+                </p>
+
+                <div className="mt-auto flex flex-wrap items-center gap-3 border-t border-white/10 pt-4">
+                    <a
+                        href="https://github.com/Shajeenth/"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-sm uppercase tracking-[0.25em] text-gray-300 transition-colors duration-200 hover:text-[#fdf8c2]"
+                    >
+                        github
+                    </a>
+                    <a
+                        href="https://linkedin.com"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-sm uppercase tracking-[0.25em] text-gray-300 transition-colors duration-200 hover:text-[#fdf8c2]"
+                    >
+                        linkedin
+                    </a>
+                    <a
+                        href="https://devpost.com/shajeenths"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-sm uppercase tracking-[0.25em] text-gray-300 transition-colors duration-200 hover:text-[#fdf8c2]"
+                    >
+                        devpost
+                    </a>
+                </div>
             </div>
         </aside>
     )
