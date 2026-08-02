@@ -20,8 +20,19 @@ function Name() {
                 
                 <br></br>
 
-                <p className="tinytext text-white">
-                    <span className="font-semibold text-white" >about me:</span>
+                <p className="text-sm tinytext text-white">
+                    <span className="font-light text-gray-300">what i'm doing right now</span>
+                    <ul className="list-disc pl-5">
+                        <li className="tinytext text-gray-300 my-1">
+                            learning <span className="font-medium text-gray-100 underline">Solidworks</span> and preparing for the Certified Solidworks Associate (CSWA) exam
+                        </li>
+                        <li className="tinytext text-gray-300 my-1">
+                            studying <span className="font-medium text-gray-100 underline">FreeRTOS</span> and embedded systems programming
+                        </li>
+                        <li className="tinytext text-gray-300 my-1">
+                            working on a robotic arm
+                        </li>
+                    </ul>
                 </p>
             </div>
         </aside>
