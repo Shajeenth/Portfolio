@@ -30,7 +30,7 @@ function Name() {
                             studying <span className="font-medium text-gray-100 underline">FreeRTOS</span> and embedded systems programming
                         </li>
                         <li className="tinytext text-gray-300 my-1">
-                            working on a robotic arm
+                            working on a 3-DOF robotic arm that can be controlled with <span className="font-medium text-gray-100 underline">OpenCV</span>
                         </li>
                     </ul>
                 </p>
