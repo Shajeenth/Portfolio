@@ -27,26 +27,14 @@ function Name() {
                             learning <span className="font-medium text-gray-100 underline">Solidworks</span> and preparing for the Certified Solidworks Associate (CSWA) exam
                         </li>
                         <li className="tinytext text-gray-300 my-1">
-                            studying <span className="font-medium text-gray-100 underline">FreeRTOS</span> and embedded systems programming
+                            studying <span className="font-medium text-gray-100 underline">ROS 2</span> and autonomous programming
                         </li>
                         <li className="tinytext text-gray-300 my-1">
-                            working on a 3-DOF robotic arm that can be controlled with <span className="font-medium text-gray-100 underline">OpenCV</span>
+                            working on a carrom bot with a 2D-gantry system that can be controlled with <span className="font-medium text-gray-100 underline">OpenCV</span>
                         </li>
                     </ul>
                 </p>
                 <br></br>
-
-                <p className="text-sm tinytext text-white mb-4">
-                    <span className="font-light text-gray-300">about me</span>
-                    <ul className="list-disc pl-5">
-                        <li className="tinytext text-gray-300 my-1">
-                            i love Bleach (the manga)
-                        </li>
-                        <li className="tinytext text-gray-300 my-1">
-                            Nujabes is my favorite music producer
-                        </li>
-                    </ul>
-                </p>
 
                 <div className="mt-auto flex flex-wrap items-center gap-3 border-t border-white/10 pt-4">
                     <a
