@@ -1,0 +1,140 @@
+.projects-page {
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: 64px 0;
+  background: #000;
+}
+
+.projects-page__content {
+  width: 50vw;
+  margin-inline: auto;
+}
+
+.projects-page__header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.projects-page__title {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 30px;
+  font-weight: 650;
+  line-height: 1.2;
+}
+
+.projects-page__title:focus {
+  outline: none;
+}
+
+.projects-page__back {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 8px;
+  border: 0;
+  background: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.projects-page__back svg {
+  width: 24px;
+  height: 24px;
+}
+
+.projects-page__back:hover {
+  color: #d1d5db;
+}
+
+.projects-page__back:focus-visible,
+.projects-page__details a:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 4px;
+}
+
+.projects-page__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.projects-page__project {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  align-items: center;
+  gap: 24px;
+  padding-block: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.projects-page__image,
+.projects-page__placeholder {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  background: #111;
+}
+
+.projects-page__placeholder {
+  display: grid;
+  place-content: center;
+  color: #d1d5db;
+  font-family: 'Courier New', monospace;
+  font-size: clamp(14px, 1.5vw, 24px);
+  line-height: 1.6;
+  text-align: center;
+}
+
+.projects-page__details {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.projects-page__details h2 {
+  margin: 0 0 12px;
+  font-size: 20px;
+  font-weight: 650;
+}
+
+.projects-page__details p {
+  margin: 0;
+  color: #d1d5db;
+  font-size: 15px;
+  font-weight: 200;
+  line-height: 1.6;
+}
+
+.projects-page__details a {
+  display: inline-block;
+  margin-top: 16px;
+  color: #d1d5db;
+  font-size: 14px;
+  text-underline-offset: 4px;
+}
+
+@media (max-width: 768px) {
+  .projects-page {
+    padding: 32px 16px;
+  }
+
+  .projects-page__content {
+    width: 100%;
+  }
+
+  .projects-page__project {
+    grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr);
+    gap: 16px;
+  }
+
+  .projects-page__details h2 {
+    font-size: 18px;
+  }
+
+  .projects-page__details p {
+    font-size: 14px;
+  }
+}

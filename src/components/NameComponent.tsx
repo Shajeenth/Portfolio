@@ -1,8 +1,14 @@
 import { useLayoutEffect, useRef } from 'react'
 import './NameComponent.css'
 import AsciiTorus from './AsciiTorus'
+import resumeUrl from '../assets/ShajeenthResume.pdf?url'
 
-export default function NameComponent() {
+type NameComponentProps = {
+  onProjects: () => void
+  onExperience: () => void
+}
+
+export default function NameComponent({ onProjects, onExperience }: NameComponentProps) {
   const firstNameRef = useRef<HTMLSpanElement>(null)
   const surnameRef = useRef<HTMLSpanElement>(null)
   const descriptionRef = useRef<HTMLDivElement>(null)
@@ -14,17 +20,24 @@ export default function NameComponent() {
       const surname = surnameRef.current
       if (!active || !firstName || !surname) return
 
+      const isMobile = window.matchMedia('(max-width: 768px)').matches
+      const nameWidth = firstName.parentElement!.getBoundingClientRect().width
+
       // Measure the actual font and letter spacing at a known size.
       for (const [line, widthFraction] of [[firstName, 0.5], [surname, 0.3]] as const) {
         line.style.fontSize = '100px'
         const measuredWidth = line.getBoundingClientRect().width
         if (measuredWidth > 0) {
-          const targetWidth = document.documentElement.clientWidth * widthFraction
+          const targetWidth = isMobile
+            ? nameWidth
+            : document.documentElement.clientWidth * widthFraction
           line.style.fontSize = `${100 * targetWidth / measuredWidth}px`
         }
       }
       if (descriptionRef.current) {
-        descriptionRef.current.style.width = `${surname.getBoundingClientRect().width}px`
+        descriptionRef.current.style.width = isMobile
+          ? ''
+          : `${surname.getBoundingClientRect().width}px`
       }
     }
 
@@ -56,9 +69,15 @@ export default function NameComponent() {
             <a href="https://github.com/Shajeenth/carrombot">my current progress</a>!
           </p>
           <div className="name-landing__sections">
-            <span>projects</span>
-            <span>experience</span>
-            <span>resume</span>
+            <button type="button" className="name-landing__section-button" onClick={onProjects} data-section="projects" data-page-focus>
+              projects
+            </button>
+            <button type="button" className="name-landing__section-button" onClick={onExperience} data-section="experience">
+              experience
+            </button>
+            <a href={resumeUrl} className="name-landing__section-button" target="_blank" rel="noopener noreferrer">
+              resume
+            </a>
           </div>
           <hr className="name-landing__divider" />
           <nav className="name-landing__socials" aria-label="Social and contact links">
