@@ -2,9 +2,11 @@ import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import NameComponent from './components/NameComponent'
 import ProjectsPage from './components/ProjectsPage'
 import ExperiencePage from './components/ExperiencePage'
+import ThemeToggle from './components/ThemeToggle'
 import { useMobilePageFit } from './useMobilePageFit'
 import './App.css'
 import './MobileLayout.css'
+import './Theme.css'
 
 type Page = 'landing' | 'projects' | 'experience'
 
@@ -45,18 +47,21 @@ export default function App() {
   }, [page])
 
   return (
-    <div
-      key={page}
-      ref={pageRef}
-      className={`portfolio-page${destination !== null ? ' portfolio-page--leaving' : ''}`}
-      inert={destination !== null}
-      aria-busy={destination !== null}
-    >
-      {page === 'landing'
-        ? <NameComponent onProjects={() => navigate('projects')} onExperience={() => navigate('experience')} />
-        : page === 'projects'
-          ? <ProjectsPage onBack={() => navigate('landing')} />
-          : <ExperiencePage onBack={() => navigate('landing')} />}
-    </div>
+    <>
+      <ThemeToggle />
+      <div
+        key={page}
+        ref={pageRef}
+        className={`portfolio-page${destination !== null ? ' portfolio-page--leaving' : ''}`}
+        inert={destination !== null}
+        aria-busy={destination !== null}
+      >
+        {page === 'landing'
+          ? <NameComponent onProjects={() => navigate('projects')} onExperience={() => navigate('experience')} />
+          : page === 'projects'
+            ? <ProjectsPage onBack={() => navigate('landing')} />
+            : <ExperiencePage onBack={() => navigate('landing')} />}
+      </div>
+    </>
   )
 }

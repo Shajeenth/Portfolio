@@ -2,7 +2,7 @@
   min-height: 100vh;
   min-height: 100dvh;
   padding: 64px 0;
-  background: #000;
+  background: var(--page-background);
 }
 
 .projects-page__content {
@@ -37,7 +37,7 @@
   padding: 8px;
   border: 0;
   background: none;
-  color: #fff;
+  color: var(--text-primary);
   cursor: pointer;
 }
 
@@ -47,12 +47,12 @@
 }
 
 .projects-page__back:hover {
-  color: #d1d5db;
+  color: var(--text-secondary);
 }
 
 .projects-page__back:focus-visible,
 .projects-page__details a:focus-visible {
-  outline: 1px solid #fff;
+  outline: 1px solid var(--text-primary);
   outline-offset: 4px;
 }
 
@@ -67,7 +67,7 @@
   align-items: center;
   gap: 24px;
   padding-block: 24px;
-  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  border-top: 1px solid var(--border-color);
 }
 
 .projects-page__image,
@@ -76,13 +76,13 @@
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: contain;
-  background: #111;
+  background: var(--surface-background);
 }
 
 .projects-page__placeholder {
   display: grid;
   place-content: center;
-  color: #d1d5db;
+  color: var(--text-secondary);
   font-family: 'Courier New', monospace;
   font-size: clamp(14px, 1.5vw, 24px);
   line-height: 1.6;
@@ -102,7 +102,7 @@
 
 .projects-page__details p {
   margin: 0;
-  color: #d1d5db;
+  color: var(--text-secondary);
   font-size: 15px;
   font-weight: 200;
   line-height: 1.6;
@@ -111,7 +111,7 @@
 .projects-page__details a {
   display: inline-block;
   margin-top: 16px;
-  color: #d1d5db;
+  color: var(--text-secondary);
   font-size: 14px;
   text-underline-offset: 4px;
 }

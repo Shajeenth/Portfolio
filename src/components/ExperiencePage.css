@@ -2,7 +2,7 @@
   min-height: 100vh;
   min-height: 100dvh;
   padding: 64px 0;
-  background: #000;
+  background: var(--page-background);
 }
 
 .experience-page__content {
@@ -37,7 +37,7 @@
   padding: 8px;
   border: 0;
   background: none;
-  color: #fff;
+  color: var(--text-primary);
   cursor: pointer;
 }
 
@@ -47,11 +47,11 @@
 }
 
 .experience-page__back:hover {
-  color: #d1d5db;
+  color: var(--text-secondary);
 }
 
 .experience-page__back:focus-visible {
-  outline: 1px solid #fff;
+  outline: 1px solid var(--text-primary);
   outline-offset: 4px;
 }
 
@@ -66,7 +66,7 @@
   align-items: start;
   gap: 24px;
   padding-block: 24px;
-  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  border-top: 1px solid var(--border-color);
   overflow-wrap: anywhere;
 }
 
@@ -81,7 +81,7 @@
 .experience-page__description,
 .experience-page__empty {
   margin: 0;
-  color: #d1d5db;
+  color: var(--text-secondary);
   font-size: 15px;
   font-weight: 200;
   line-height: 1.6;
@@ -106,7 +106,7 @@
 
 .experience-page__empty {
   padding-block: 24px;
-  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  border-top: 1px solid var(--border-color);
 }
 
 @media (max-width: 768px) {

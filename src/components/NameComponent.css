@@ -1,7 +1,7 @@
 :root {
   font-family: 'Montserrat', sans-serif;
-  color: #fff;
-  background: #000;
+  color: var(--text-primary);
+  background: var(--page-background);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -22,7 +22,7 @@ body {
   min-height: 100dvh;
   padding: 4vw;
   place-items: center;
-  background: #000;
+  background: var(--page-background);
 }
 
 .name-landing__content {
@@ -70,13 +70,13 @@ body {
 }
 
 .name-landing__torus:focus-visible {
-  outline: 1px solid rgba(255, 255, 255, 0.65);
+  outline: 1px solid var(--text-muted);
   outline-offset: 4px;
 }
 
 .name-landing__torus-frame {
   margin: 0;
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--torus-color);
   font-family: 'Courier New', monospace;
   font-size: calc(100cqw / 40);
   font-weight: 400;
@@ -104,7 +104,7 @@ body {
 }
 
 .name-landing__description a {
-  color: #d1d5db;
+  color: var(--text-secondary);
   font-weight: 400;
   text-decoration: underline;
   text-underline-offset: 3px;
@@ -124,7 +124,7 @@ body {
 .name-landing__divider {
   margin: 12px 0 16px;
   border: 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  border-top: 1px solid var(--border-color);
 }
 
 .name-landing__section-button {
@@ -143,7 +143,7 @@ body {
 }
 
 .name-landing__section-button:focus-visible {
-  outline: 1px solid #fff;
+  outline: 1px solid var(--text-primary);
   outline-offset: 4px;
 }
 
@@ -159,7 +159,7 @@ body {
   justify-content: center;
   width: 40px;
   height: 40px;
-  color: rgba(255, 255, 255, 0.65);
+  color: var(--text-muted);
   transition: color 180ms ease;
 }
 
@@ -170,11 +170,11 @@ body {
 
 .name-landing__social-link:hover,
 .name-landing__social-link:focus-visible {
-  color: #fff;
+  color: var(--text-primary);
 }
 
 .name-landing__social-link:focus-visible {
-  outline: 1px solid #fff;
+  outline: 1px solid var(--text-primary);
   outline-offset: 3px;
   border-radius: 4px;
 }
