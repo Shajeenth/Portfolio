@@ -12,6 +12,13 @@ const projects = [
     alt: '',
   },
   {
+    title: 'Autonomous LiDAR ROS 2 Simulation',
+    description: 'A foxglove simulation that uses LiDAR data to map out and remember its surroundings. Using that data it uses A* and pure pursuit navigation logic to move around obstacles to a given point.',
+    href: 'https://github.com/Shajeenth/wato_asd_training',
+    image: null,
+    alt: '',
+  },
+  {
     title: 'FreeRTOS Gripper',
     description: 'A 3D-printed gripper that gets web inputs from a wifi-connected ESP32 while using FreeRTOS.',
     href: 'https://github.com/Shajeenth/robot-arm',
