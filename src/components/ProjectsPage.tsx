@@ -1,24 +1,34 @@
 import prototypeImage from '../assets/prototype.jpg'
 import rotaImage from '../assets/imgOfRota.png'
+import gripperImage from '../assets/gripper.jpg'
 import './ProjectsPage.css'
 
 const projects = [
   {
     title: 'carrombot',
-    description: 'An autonomous carrom project using OpenCV and ROS 2.',
+    description: 'An autonomous carrom project with a 2D gantry system using OpenCV and ROS 2.',
     href: 'https://github.com/Shajeenth/carrombot',
     image: null,
     alt: '',
   },
   {
-    title: 'hardware prototype',
-    description: 'A breadboard prototype with a microcontroller, buttons, and connected modules.',
+    title: 'FreeRTOS Gripper',
+    description: 'A 3D-printed gripper that gets web inputs from a wifi-connected ESP32 while using FreeRTOS.',
+    href: 'https://github.com/Shajeenth/robot-arm',
+    image: gripperImage,
+    alt: 'Breadboard electronics prototype',
+  },
+    {
+    title: 'MakeshiftController',
+    description: 'An ESP32 Controller that communicates throught Bluetooth. It works with Steam Games, such as Hades and Hollow Knight.',
+    href: 'https://github.com/Shajeenth/MakeshiftController',
     image: prototypeImage,
     alt: 'Breadboard electronics prototype',
   },
   {
     title: 'rota',
     description: 'A system for managing clients and vehicles.',
+    href: 'https://github.com/Shajeenth/rota',
     image: rotaImage,
     alt: 'Rota login screen',
   },
@@ -41,7 +51,7 @@ export default function ProjectsPage({ onBack }: { onBack: () => void }) {
             <article className="projects-page__project" key={project.title}>
               {project.image
                 ? <img className="projects-page__image" src={project.image} alt={project.alt} />
-                : <div className="projects-page__placeholder" aria-hidden="true">OpenCV<br />ROS 2</div>}
+                : <div className="projects-page__placeholder" aria-hidden="true">in progress</div>}
               <div className="projects-page__details">
                 <h2>{project.title}</h2>
                 <p>{project.description}</p>

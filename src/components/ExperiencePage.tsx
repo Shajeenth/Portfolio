@@ -4,11 +4,22 @@ type Experience = {
   role: string
   organization: string
   period: string
-  description: string
+  description: string[]
 }
 
-// Add experience entries here; each renders as a horizontal row.
-const experiences: Experience[] = []
+const experiences: Experience[] = [
+  {
+    role: 'Victoria Park Robotics',
+    organization: 'Victoria Park Collegiate Institute · North York, ON',
+    period: 'Sep. 2023 – Mar. 2026',
+    description: [
+      'Developed a centralized static Java class for managing motor and servo IDs, improving hardware configuration consistency in order to boost efficiency in programming.',
+      'Tested and tuned motor speed and position to achieve accurate and repeatable linear slide positioning using encoder feedback.',
+      'Worked amongst a team using one shared GitHub repository.',
+      'Competed in the FIRST Tech Challenge and won an Innovate Award.',
+    ],
+  },
+]
 
 export default function ExperiencePage({ onBack }: { onBack: () => void }) {
   return (
@@ -33,7 +44,11 @@ export default function ExperiencePage({ onBack }: { onBack: () => void }) {
                 <p className="experience-page__organization">{experience.organization}</p>
                 <p className="experience-page__period">{experience.period}</p>
               </div>
-              <p className="experience-page__description">{experience.description}</p>
+              <ul className="experience-page__description">
+                {experience.description.map(description => (
+                  <li key={description}>{description}</li>
+                ))}
+              </ul>
             </article>
           ))}
         </div>

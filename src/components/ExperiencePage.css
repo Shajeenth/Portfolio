@@ -91,6 +91,14 @@
   font-weight: 400;
 }
 
+.experience-page__description {
+  padding-left: 20px;
+}
+
+.experience-page__description li + li {
+  margin-top: 12px;
+}
+
 .experience-page__period {
   margin-top: 8px;
   font-size: 13px;
