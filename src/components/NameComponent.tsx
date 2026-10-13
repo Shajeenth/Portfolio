@@ -2,6 +2,7 @@ import { useLayoutEffect, useRef } from 'react'
 import './NameComponent.css'
 import AsciiTorus from './AsciiTorus'
 import resumeUrl from '../assets/ShajeenthResume.pdf?url'
+import { mobilePageQuery } from '../useMobilePageFit'
 
 type NameComponentProps = {
   onProjects: () => void
@@ -20,7 +21,7 @@ export default function NameComponent({ onProjects, onExperience }: NameComponen
       const surname = surnameRef.current
       if (!active || !firstName || !surname) return
 
-      const isMobile = window.matchMedia('(max-width: 768px)').matches
+      const isMobile = window.matchMedia(mobilePageQuery).matches
       const nameWidth = firstName.parentElement!.getBoundingClientRect().width
 
       // Measure the actual font and letter spacing at a known size.
@@ -31,7 +32,10 @@ export default function NameComponent({ onProjects, onExperience }: NameComponen
           const targetWidth = isMobile
             ? nameWidth
             : document.documentElement.clientWidth * widthFraction
-          line.style.fontSize = `${100 * targetWidth / measuredWidth}px`
+          const fontSize = 100 * targetWidth / measuredWidth
+          line.style.fontSize = isMobile
+            ? `calc(min(${fontSize}px, var(--mobile-name-cap, 100vw)) * var(--mobile-fit, 1))`
+            : `${fontSize}px`
         }
       }
       if (descriptionRef.current) {

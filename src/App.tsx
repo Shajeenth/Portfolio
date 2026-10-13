@@ -2,7 +2,9 @@ import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import NameComponent from './components/NameComponent'
 import ProjectsPage from './components/ProjectsPage'
 import ExperiencePage from './components/ExperiencePage'
+import { useMobilePageFit } from './useMobilePageFit'
 import './App.css'
+import './MobileLayout.css'
 
 type Page = 'landing' | 'projects' | 'experience'
 
@@ -12,6 +14,8 @@ export default function App() {
   const pageRef = useRef<HTMLDivElement>(null)
   const hasNavigated = useRef(false)
   const lastSection = useRef<Page>('projects')
+
+  useMobilePageFit(pageRef, page)
 
   const navigate = (nextPage: Page) => {
     if (destination !== null || nextPage === page) return
