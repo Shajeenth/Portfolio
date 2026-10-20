@@ -6,11 +6,11 @@ import gripperImage from '../assets/gripper.jpg'
 export const projects = [
   {
     title: 'carrombot',
-    fdescription: '',
+    fdescription: 'An ongoing computer vision project developed as the perception system for an autonomous carrom-playing robot. The system aims to detect and locate carrom pieces using an overhead camera, providing positional information for future autonomous shot planning and robotic actuation. Developed in C++ using OpenCV, the vision pipeline uses HSV colour-space thresholding to isolate carrom pieces based on their colour characteristics. Morphological operations refine the resulting masks by reducing noise and improving object separation, after which the Hough Circle Transform is applied to detect circular game pieces and estimate their positions. A key challenge has been distinguishing actual carrom pieces from similarly coloured board markings while maintaining reliable detection under varying lighting conditions and reflections. The system is being iteratively refined to reduce false positives and improve detection consistency. Future development will focus on mapping detected piece positions to physical board coordinates and integrating the vision system with a motor-driven gantry and striker mechanism to enable autonomous gameplay.',
     description: 'An autonomous carrom using OpenCV.',
     href: 'https://github.com/Shajeenth/carrombot',
     image: carromImage,
-    alt: 'An ongoing computer vision project developed as the perception system for an autonomous carrom-playing robot. The system aims to detect and locate carrom pieces using an overhead camera, providing positional information for future autonomous shot planning and robotic actuation. Developed in C++ using OpenCV, the vision pipeline uses HSV colour-space thresholding to isolate carrom pieces based on their colour characteristics. Morphological operations refine the resulting masks by reducing noise and improving object separation, after which the Hough Circle Transform is applied to detect circular game pieces and estimate their positions. A key challenge has been distinguishing actual carrom pieces from similarly coloured board markings while maintaining reliable detection under varying lighting conditions and reflections. The system is being iteratively refined to reduce false positives and improve detection consistency. Future development will focus on mapping detected piece positions to physical board coordinates and integrating the vision system with a motor-driven gantry and striker mechanism to enable autonomous gameplay.',
+    alt: '',
   },
   {
     title: 'Autonomous LiDAR ROS 2 Simulation',
