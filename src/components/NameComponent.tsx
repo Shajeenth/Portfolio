@@ -1,6 +1,6 @@
 import { useLayoutEffect, useRef } from 'react'
 import './NameComponent.css'
-import AsciiTorus from './AsciiTorus'
+import ProjectCarousel from './ProjectCarousel'
 import resumeUrl from '../assets/ShajeenthResume.pdf?url'
 import { mobilePageQuery } from '../useMobilePageFit'
 
@@ -62,7 +62,7 @@ export default function NameComponent({ onProjects, onExperience }: NameComponen
           <span ref={surnameRef}>shanmugarajah</span>
         </h1>
         <div className="name-landing__details">
-          <AsciiTorus />
+          <ProjectCarousel />
           <div ref={descriptionRef} className="name-landing__description-container">
           <p className="name-landing__description">
             I'm a mechatronics engineering student at the University of Waterloo.

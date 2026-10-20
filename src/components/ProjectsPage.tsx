@@ -1,47 +1,15 @@
-import prototypeImage from '../assets/prototype.jpg'
-import rotaImage from '../assets/imgOfRota.png'
-import gripperImage from '../assets/gripper.jpg'
+import { useEffect, useRef, useState } from 'react'
+import { projects } from './projects'
 import './ProjectsPage.css'
 
-const projects = [
-  {
-    title: 'carrombot',
-    description: 'An autonomous carrom project with a 2D gantry system using OpenCV and ROS 2.',
-    href: 'https://github.com/Shajeenth/carrombot',
-    image: null,
-    alt: '',
-  },
-  {
-    title: 'Autonomous LiDAR ROS 2 Simulation',
-    description: 'A foxglove simulation that uses LiDAR data to map out and remember its surroundings. Using that data it uses A* and pure pursuit navigation logic to move around obstacles to a given point.',
-    href: 'https://github.com/Shajeenth/wato_asd_training',
-    image: null,
-    alt: '',
-  },
-  {
-    title: 'FreeRTOS Gripper',
-    description: 'A 3D-printed gripper that gets web inputs from a wifi-connected ESP32 while using FreeRTOS.',
-    href: 'https://github.com/Shajeenth/robot-arm',
-    image: gripperImage,
-    alt: 'Breadboard electronics prototype',
-  },
-    {
-    title: 'MakeshiftController',
-    description: 'An ESP32 Controller that communicates throught Bluetooth. It works with Steam Games, such as Hades and Hollow Knight.',
-    href: 'https://github.com/Shajeenth/MakeshiftController',
-    image: prototypeImage,
-    alt: 'Breadboard electronics prototype',
-  },
-  {
-    title: 'rota',
-    description: 'A system for managing clients and vehicles.',
-    href: 'https://github.com/Shajeenth/rota',
-    image: rotaImage,
-    alt: 'Rota login screen',
-  },
-]
-
 export default function ProjectsPage({ onBack }: { onBack: () => void }) {
+  const [selectedProject, setSelectedProject] = useState<(typeof projects)[number] | null>(null)
+  const dialogRef = useRef<HTMLDialogElement>(null)
+
+  useEffect(() => {
+    if (selectedProject) dialogRef.current?.showModal()
+  }, [selectedProject])
+
   return (
     <main className="projects-page">
       <div className="projects-page__content">
@@ -56,6 +24,13 @@ export default function ProjectsPage({ onBack }: { onBack: () => void }) {
         <div className="projects-page__list">
           {projects.map(project => (
             <article className="projects-page__project" key={project.title}>
+              <button
+                type="button"
+                className="projects-page__project-trigger"
+                onClick={() => setSelectedProject(project)}
+                aria-label={`Open ${project.title} details`}
+                aria-haspopup="dialog"
+              />
               {project.image
                 ? <img className="projects-page__image" src={project.image} alt={project.alt} />
                 : <div className="projects-page__placeholder" aria-hidden="true">in progress</div>}
@@ -70,6 +45,38 @@ export default function ProjectsPage({ onBack }: { onBack: () => void }) {
           ))}
         </div>
       </div>
+      <dialog
+        ref={dialogRef}
+        className="projects-page__dialog"
+        aria-labelledby="project-dialog-title"
+        onClose={() => setSelectedProject(null)}
+        onClick={event => {
+          if (event.target === event.currentTarget) dialogRef.current?.close()
+        }}
+      >
+        {selectedProject && (
+          <div className="projects-page__popup">
+            <button
+              type="button"
+              className="projects-page__popup-close"
+              onClick={() => dialogRef.current?.close()}
+              aria-label="Close project details"
+              autoFocus
+            >
+              ×
+            </button>
+            {selectedProject.image && (
+              <img className="projects-page__image" src={selectedProject.image} alt={selectedProject.alt} />
+            )}
+            <div className="projects-page__details">
+              <h2 id="project-dialog-title">{selectedProject.title}</h2>
+              <p>{selectedProject.description}</p>
+              {selectedProject.fdescription && <p>{selectedProject.fdescription}</p>}
+              <a href={selectedProject.href} target="_blank" rel="noopener noreferrer">view project ↗</a>
+            </div>
+          </div>
+        )}
+      </dialog>
     </main>
   )
 }

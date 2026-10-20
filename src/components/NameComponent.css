@@ -56,36 +56,6 @@ body {
   width: 100%;
 }
 
-.name-landing__torus {
-  transform: translate(-10%, -10%);
-  container-type: inline-size;
-  display: grid;
-  place-items: center;
-  align-self: center;
-  /* Abut the text with a 20vw box, putting its center 10vw to the left. */
-  width: 20vw;
-  min-width: 0;
-  overflow: hidden;
-  cursor: pointer;
-}
-
-.name-landing__torus:focus-visible {
-  outline: 1px solid var(--text-muted);
-  outline-offset: 4px;
-}
-
-.name-landing__torus-frame {
-  margin: 0;
-  color: var(--torus-color);
-  font-family: 'Courier New', monospace;
-  font-size: calc(100cqw / 40);
-  font-weight: 400;
-  line-height: 1;
-  letter-spacing: 0;
-  white-space: pre;
-  user-select: none;
-}
-
 .name-landing__description-container {
   width: 30vw;
   margin-left: auto;
@@ -192,12 +162,6 @@ body {
     grid-template-columns: minmax(0, 1fr);
     row-gap: 16px;
     margin-top: 24px;
-  }
-
-  .name-landing__torus {
-    width: min(60vw, 280px);
-    justify-self: center;
-    transform: none;
   }
 
   .name-landing__description-container {

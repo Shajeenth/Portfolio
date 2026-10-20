@@ -22,12 +22,6 @@
     margin-top: calc(16px * var(--mobile-fit, 1));
   }
 
-  .name-landing__torus {
-    width: calc(min(52vw, 24dvh, 240px) * var(--mobile-fit, 1));
-    justify-self: center;
-    transform: none;
-  }
-
   .name-landing__description-container {
     width: 100%;
     min-width: 0;
